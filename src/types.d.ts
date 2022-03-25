@@ -7,6 +7,7 @@ export interface Venue {
   longitude: number | string;
   latitude: number | string;
   dateModified: string;
+  coordsCorrected: boolean;
 }
 
 export interface Coord {

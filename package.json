@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/script.ts",
+    "parse-dump": "ts-node src/parseDump.ts",
+    "process-data": "ts-node src/processData.ts",
     "build": "tsc -p"
   },
   "author": "",

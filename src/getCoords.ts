@@ -1,5 +1,8 @@
+import dotenv from "dotenv";
 import axios from "axios";
 import { Coord } from './types';
+
+dotenv.config();
 
 export const getCoords = async (address:string): Promise<Coord> => {
 
@@ -7,6 +10,7 @@ export const getCoords = async (address:string): Promise<Coord> => {
       access_key: process.env.POSITION_STACK_API_KEY,
       query: address,
     };
+    
     return axios
       .get("http://api.positionstack.com/v1/forward", { params })
       .then((response) => {

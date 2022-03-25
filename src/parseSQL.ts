@@ -27,6 +27,7 @@ export const parseSQL = (filename: string): Venue[] | undefined => {
         longitude: handleCoordType(text.split(",").slice(-3, -2).join()),
         latitude: handleCoordType(text.split(",").slice(-2, -1).join()),
         dateModified: text.split(",").slice(-1).join().slice(1, -1),
+        coordsCorrected: false,
       };
     });
 
