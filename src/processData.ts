@@ -24,7 +24,7 @@ const batch = [];
 for (let i = 0; i < venues.length; i++) {
   if (count === 0) break;
   if (
-    !venues[i].coordsCorrected &&
+    !venues[i].coordsAttempted &&
     venues[i].longitude === 0 &&
     venues[i].latitude === 0
   ) {
@@ -63,7 +63,7 @@ const updateCoords = async (venuesArr: Venue[]): Promise<Venue[]> => {
             longitude: result.longitude,
             latitude: result.latitude,
             dateModified: venue.dateModified,
-            coordsCorrected: true
+            coordsAttempted: true
           };
         }
       }
@@ -97,3 +97,10 @@ if (batch) {
 }
 
 
+
+
+/*
+Next steps:
+- Need to update the json file so that script doesn't repeat process on the same entries.
+- If process is unsuccessful, coordsAttempted still needs to update to TRUE.
+*/
