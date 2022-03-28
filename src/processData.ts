@@ -1,7 +1,4 @@
-import dotenv from "dotenv";
 import fs from "fs";
-import { parseSQL } from "./parseSQL";
-import { getCoords } from "./getCoords";
 import { update } from "./update";
 import { updateCoords } from "./updateCoords";
 
