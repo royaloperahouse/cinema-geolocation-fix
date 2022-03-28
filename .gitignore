@@ -4,4 +4,6 @@
 !/data_dump_input/01_test.sql
 /output/data/*
 !/output/data/00.json
+/output/sql_string/*
+!/output/sql_string/placeholder.txt
 /ignore
