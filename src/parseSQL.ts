@@ -39,5 +39,5 @@ export const parseSQL = (filename: string): Venue[] | undefined => {
 };
 
 const handleCoordType = (val: string): string | number => {
-  return val !== "NULL" ? Number(val) : val
-}
+  return val !== "NULL" ? Number(val) : val;
+};
