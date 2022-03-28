@@ -1,5 +1,5 @@
 import fs from "fs";
-import { Coord, Venue, Summary } from "./types";
+import { Venue } from "./types";
 import { DateTime } from "luxon";
 
 export const update = async (venuesList: Venue[], result: Promise<Venue[]>) => {
