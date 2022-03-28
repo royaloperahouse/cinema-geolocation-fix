@@ -11,7 +11,7 @@ export const update = async (venuesList: Venue[], result: Promise<Venue[]>) => {
     return;
   }
 
-  console.log("Edited venues to include:", updatedVenues);
+  // console.log("Edited venues to include:", updatedVenues);
 
   // For each venue result.. replace updated entry back into data array.
   updatedVenues.forEach((updated) => {

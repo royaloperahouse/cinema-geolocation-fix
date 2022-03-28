@@ -5,7 +5,7 @@ import { getCoords } from "./getCoords";
 import { update } from "./update";
 import { updateCoords } from "./updateCoords";
 
-const NUMBER_TO_PROCESS = 5;
+const NUMBER_TO_PROCESS = 20;
 
 // Get latest data file
 const latest = fs.readdirSync("./output/data").slice(-1)[0];

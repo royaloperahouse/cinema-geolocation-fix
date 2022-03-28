@@ -7,9 +7,11 @@ A script for parsing SQL data for cinemas and updating their Longitude and Latit
 
 ## Use
 
-- Step 1: Drop `*.sql` data dump file into `data_dump_input` folder.
+- Drop `*.sql` data dump file into `data_dump_input` folder.
 - Run `npm run parse-dump` to parse relevant data into json file.
   - Output should be saved in `output/data` folder as a .json document.
-- Step 2: Run `npm run process-data` to incrementally update venue entries.
+- Run `npm run process-data` to incrementally update venue entries.
   - A new json file will be created in `output/data`.
-- Continue step until all data has been processed.
+- Repeat previous step until all data has been processed.
+
+- To force script to start again from the top of the list, run: `npm run reset-progress`
