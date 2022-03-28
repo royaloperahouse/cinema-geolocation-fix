@@ -3,7 +3,7 @@ A set of scripts for parsing SQL data for cinemas, updating their Longitude and 
 
 ## Setup
 - `npm install`
-- Get API key from: https://positionstack.com/ and paste into .env file.
+- Get API key from Google Maps Platform (or alternatively https://positionstack.com/) and paste into .env file.
 
 ## Usage
 

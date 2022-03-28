@@ -6,6 +6,39 @@ dotenv.config();
 
 export const getCoords = async (address: string): Promise<Coord> => {
   const params = {
+    key: process.env.GOOGLE_API_KEY,
+    address: address,
+  };
+
+  return axios
+    .get("https://maps.googleapis.com/maps/api/geocode/json", { params })
+    .then((response) => {
+      const results = response.data.results[0].geometry.location;
+
+      if (response.data.results.length) {
+        return {
+          longitude: results.lng,
+          latitude: results.lat,
+        };
+      } else
+        return {
+          longitude: 404,
+          latitude: 404,
+        };
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+      return {
+        longitude: 404,
+        latitude: 404,
+      };
+    });
+};
+
+// --- Alternative free API (not as good) ---
+/*
+export const getCoords = async (address: string): Promise<Coord> => {
+  const params = {
     access_key: process.env.POSITION_STACK_API_KEY,
     query: address,
   };
@@ -32,3 +65,4 @@ export const getCoords = async (address: string): Promise<Coord> => {
       };
     });
 };
+*/

@@ -8,6 +8,8 @@
     "parse-dump": "ts-node src/parseDump.ts",
     "process-data": "ts-node src/processData.ts",
     "reset-progress": "ts-node src/resetProgress.ts",
+    "compose-sql-venue-string": "ts-node src/sqlVenuesString.ts",
+    "get-coords": "ts-node src/getCoords.ts",
     "build": "tsc -p"
   },
   "author": "",

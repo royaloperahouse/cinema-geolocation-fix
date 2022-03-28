@@ -1,13 +1,9 @@
-import fs from "fs";
+import { getLatestArr } from "./getLatestArr";
 import { update } from "./update";
 import { updateCoords } from "./updateCoords";
 
-const NUMBER_TO_PROCESS = 20;
-
-// Get latest data file
-const latest = fs.readdirSync("./output/data").slice(-1)[0];
-const data = fs.readFileSync(`./output/data/${latest}`, "utf8");
-const venues = JSON.parse(data);
+const NUMBER_TO_PROCESS = 50;
+const venues = getLatestArr();
 let count = NUMBER_TO_PROCESS;
 const batch = [];
 
