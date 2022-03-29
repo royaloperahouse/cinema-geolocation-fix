@@ -1,5 +1,6 @@
 import { getCoords } from "./getCoords";
 import { Venue } from "./types";
+import { DateTime } from "luxon";
 
 export const updateCoords = async (venuesArr: Venue[]): Promise<Venue[]> => {
   return await Promise.all(
@@ -19,6 +20,7 @@ export const updateCoords = async (venuesArr: Venue[]): Promise<Venue[]> => {
           longitude: result.longitude,
           latitude: result.latitude,
           coordsAttempted: true,
+          dateModified: `${DateTime.now().toFormat("yyyy-MM-dd HH:mm:ss")}`
         };
       }
     })
