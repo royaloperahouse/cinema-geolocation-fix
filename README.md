@@ -16,7 +16,6 @@ A set of scripts for parsing SQL data for cinemas, updating their Longitude and 
 ```js
 const NUMBER_TO_PROCESS = 20;
 ```
-  
 - Repeat previous step until all data has been processed.
-
 - To force script to start again from the top of the list, run: `npm run reset-progress`
+- Run `npm run compose-sql-venue-string` to create a txt file in `output/sql_string` directory. This text file can be pasted directly into the original sql file or a copy.

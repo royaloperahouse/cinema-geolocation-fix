@@ -2,7 +2,7 @@ import { getLatestArr } from "./getLatestArr";
 import { update } from "./update";
 import { updateCoords } from "./updateCoords";
 
-const NUMBER_TO_PROCESS = 50;
+const NUMBER_TO_PROCESS = 200;
 const venues = getLatestArr();
 let count = NUMBER_TO_PROCESS;
 const batch = [];
