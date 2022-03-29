@@ -20,9 +20,9 @@ export const parseSQL = (filename: string): Venue[] | undefined => {
     const venueObjs = venues?.map((text) => {
       return {
         id: text.split(",")[0].replace(/\"/g, ""),
-        slug: text.split(",")[1].slice(1, -1),
-        name: text.split(",")[2].slice(1, -1),
-        address: text.split(",").slice(3, -4).join().slice(1, -1),
+        slug: text.split(",'")[1].slice(0, -1),
+        name: text.split(",'")[2].slice(0, -1),
+        address: text.split(",'")[3].slice(0, -1),
         website: text.split(",").slice(-4, -3).join().slice(1, -1),
         longitude: handleCoordType(text.split(",").slice(-3, -2).join()),
         latitude: handleCoordType(text.split(",").slice(-2, -1).join()),
