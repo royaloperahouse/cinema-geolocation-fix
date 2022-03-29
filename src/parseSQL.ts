@@ -18,12 +18,25 @@ export const parseSQL = (filename: string): Venue[] | undefined => {
 
     // deconstruct venues
     const venueObjs = venues?.map((text) => {
+
+      let website = text.split(",").slice(-4, -3).join().slice(1, -1)
+      const websiteVal = text.split(",").slice(-4, -3).join();
+
+      let address = text.split(",'")[3].slice(0, -1);
+      
+
+      if (websiteVal === "NULL") {
+        website = "NULL"
+        address = text.split(",").slice(3, -4).join().slice(1, -1);
+      }
+
+
       return {
         id: text.split(",")[0].replace(/\"/g, ""),
         slug: text.split(",'")[1].slice(0, -1),
         name: text.split(",'")[2].slice(0, -1),
-        address: text.split(",'")[3].slice(0, -1),
-        website: text.split(",").slice(-4, -3).join().slice(1, -1),
+        address,
+        website,
         longitude: handleCoordType(text.split(",").slice(-3, -2).join()),
         latitude: handleCoordType(text.split(",").slice(-2, -1).join()),
         dateModified: text.split(",").slice(-1).join().slice(1, -1),
@@ -41,3 +54,5 @@ export const parseSQL = (filename: string): Venue[] | undefined => {
 const handleCoordType = (val: string): string | number => {
   return val !== "NULL" ? Number(val) : val;
 };
+
+// const handleWebsiteNull = (val: string): 

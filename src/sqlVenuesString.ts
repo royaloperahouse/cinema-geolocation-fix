@@ -8,10 +8,14 @@ console.log(venues);
 const string =
   "INSERT INTO `screening_venues` VALUES " +
   venues
-    .map(
-      (v) =>
-        `(${v.id},'${v.slug}','${v.name}','${v.address}','${v.website}',${v.longitude},${v.latitude},'${v.dateModified}')`
-    )
+    .map((v) => {
+      let websiteString = v.website;
+      if (websiteString !== "NULL") {
+        websiteString = `'${v.website}'`;
+      }
+
+      return `(${v.id},'${v.slug}','${v.name}','${v.address}',${websiteString},${v.longitude},${v.latitude},'${v.dateModified}')`;
+    })
     .join(",") +
   ";";
 
